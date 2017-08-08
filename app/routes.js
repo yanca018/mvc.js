@@ -11,23 +11,6 @@ var route = Rlite(notFound, {
     nx.importController('inbox', function() {
       inboxController.index();
     });
-  },
-
-  // #sent?to=john -> r.params.to will equal 'john'
-  'login': function ({to}) {
-    nx.importController('auth', function() {
-      authController.login();
-    });
-  },
-
-  // #users/chris -> r.params.name will equal 'chris'
-  'users/:name': function ({name}) {
-    return 'User ' + name;
-  },
-
-  // #logout
-  'logout': function () {
-    return 'Logout';
   }
 });
 

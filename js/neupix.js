@@ -1,5 +1,4 @@
 (function ($) {
-
 $.fn.showView = function(url, data) {
 	$('.view').hide();
 	var self = $(this);
@@ -10,11 +9,16 @@ $.fn.showView = function(url, data) {
     	self;
     }, data);
 };
-
 })(jQuery);
 
 var nx = {
 	views: [],
+	init: function() {
+		$('body').append('<div id="app"><div>');	
+		$('body').append('<div id="header"><div>');
+	},
+
+
 	getView: function(url, f, data) {
 
 		//ex: view/to/path --> path-view
@@ -43,7 +47,7 @@ var nx = {
 
 	importController: function(controller, cb) {
 		if ($('#app').length == 0)
-			$('body').append('<div id="app"><div>');
+			nx.init();
 
 		//insert if not exist
 		if ($('#'+controller+'-controller').length == 0) {
@@ -151,7 +155,7 @@ var nx = {
 		});
 		return html;
 	}
-}
+};
 
 
 

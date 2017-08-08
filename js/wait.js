@@ -2,7 +2,6 @@
  * jquery.wait - insert simple delays into your jquery method chains
  * @author Matthew Lee matt@madleedesign.com
  */
-
 (function ($) {
     function jQueryDummy ($real, delay, _fncQueue) {
         // A Fake jQuery-like object that allows us to resolve the entire jQuery
